@@ -1,0 +1,40 @@
+<html>
+
+<body bgcolor="pink">
+	<ul id="mylist"><li>water</li><li>cola</li></ul>
+		<button onclick="add()">append</button>
+		<button onclick="remove()">remove</button>
+		<button onclick="insert()">insert</button>
+		<button onclick="replace()">replace</button>
+	<script>
+		function add(){
+			var node = document.createElement("LI");
+			var texnode = document.createTextNode("coffee");
+			node.appendChild(textnode);
+			document.getElementById("mylist").appendChild(node);
+		}
+		function remove()
+		{
+			var list=document.getElementById("mylist");
+			list.removeChild(list.childNodes[0]);
+		}
+		function insert()
+		{
+            
+			var node=document.createElement("li");
+			var texnode=document.createTextNode("tea");
+			node.appendChild(textnode);
+			var list=document.getElementById("mylist");
+			list.insertBefore(node,list.childNodes[0]);
+		}
+		function replace()
+		{
+			var textnode=document.createTextNode("lime");
+			var list=document.getElementById("mylist").childNodes[0];
+			list.replaceChild(textnode,list.childNodes[0]);
+		}
+	</script>
+
+	
+	</body>
+</html>
